@@ -6,8 +6,8 @@ export default class JSON {
       name: {
         first: user.name.first,
         last: user.name.last,
-        full: user.name.full()
-      }
+        full: user.name.full(),
+      },
     };
-  }
+  };
 }

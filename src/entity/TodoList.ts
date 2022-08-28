@@ -1,22 +1,25 @@
-import Connection from "../config/Connection"
-import User from "../entity/User"
-import Email from "../valueobject/Email"
-import Todo from "../valueobject/Todo"
+/* eslint-disable */
+// Not implemented yet
+
+import Connection from '../config/Connection';
+import User from '../entity/User';
+import Email from '../valueobject/Email';
+import Todo from '../valueobject/Todo';
 
 export default class UserRepository {
-  private db
-  private todo: Todo
+  private db;
+  private todo: Todo;
 
   constructor(connection: Connection, todo: Todo) {
-    this.db = connection.connect?.db(String(process.env.DB_NAME))
-    this.todo = todo
+    this.db = connection.connect?.db(String(process.env.DB_NAME));
+    this.todo = todo;
   }
 
   async get(mail: string) {
-    return 
+    return;
   }
 
   async create(user: User) {
-    return 
+    return;
   }
 }

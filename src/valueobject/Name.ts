@@ -2,7 +2,7 @@ export default class Name {
   private _first: string;
   private _last: string;
 
-  constructor(first: string, last: string = '') {
+  constructor(first: string, last = '') {
     this._first = first;
     this._last = last;
   }

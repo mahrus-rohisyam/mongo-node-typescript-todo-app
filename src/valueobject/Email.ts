@@ -3,8 +3,8 @@ export default class Email {
   private _domain: string;
 
   constructor(email: string) {
-    let emailParts = email.split('@');
-  
+    const emailParts = email.split('@');
+
     this._local = emailParts.slice(0, emailParts.length - 1).join();
     this._domain = emailParts[emailParts.length - 1];
   }

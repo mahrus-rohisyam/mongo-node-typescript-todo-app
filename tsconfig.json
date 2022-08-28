@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "moduleResolution": "Node",
     "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-    "module": "commonjs",
+    "module": "CommonJS",
     "rootDir": "./src" /* Specify what module code is generated. */,
     "outDir": "./dist" /* Specify an output folder for all emitted files. */,
     "removeComments": true /* Disable emitting comments. */,

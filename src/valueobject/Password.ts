@@ -4,7 +4,7 @@ export default class Password {
   private _salt: string;
   private _hash: string;
 
-  constructor(salt: string = '', hash: string = '') {
+  constructor(salt = '', hash = '') {
     this._salt = salt;
     if (this._salt === '') {
       this._salt = bcrypt.genSaltSync();
