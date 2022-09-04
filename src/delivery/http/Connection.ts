@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb'
 export default class Connection {
-  private uri: string
-  private connection: MongoClient
+  protected uri: string
+  protected connection: MongoClient
 
   constructor(uri: string) {
     this.uri = uri

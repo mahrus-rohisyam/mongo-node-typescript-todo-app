@@ -21,3 +21,7 @@ export default class Email {
     return this._local + '@' + this._domain;
   }
 }
+
+let email: Email = new Email('mahrusaim@gmail.com')
+
+email.string()
