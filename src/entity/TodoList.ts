@@ -1,4 +1,4 @@
-import Connection from "../config/Connection"
+import Connection from "../delivery/http/Connection"
 import User from "../entity/User"
 import Email from "../valueobject/Email"
 import Todo from "../valueobject/Todo"

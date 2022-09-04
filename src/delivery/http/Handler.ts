@@ -1,13 +1,13 @@
 import { Router } from "express";
-import User from "../entity/User";
-import Email from "../valueobject/Email";
-import Name from "../valueobject/Name";
-import Password from "../valueobject/Password";
+import User from "../../entity/User";
+import Email from "../../valueobject/Email";
+import Name from "../../valueobject/Name";
+import Password from "../../valueobject/Password";
 import jwt from 'jsonwebtoken'
-import UserRepository from "../repository/UserRepository";
+import UserRepository from "../../repository/UserRepository";
 import { MongoClient } from 'mongodb'
 import Middleware from "./Middleware";
-import JSON from "../factory/JSON";
+import JSON from "../../factory/JSON";
 
 export default (connection: MongoClient | undefined): Router => {
   const router: Router = Router()
@@ -27,7 +27,7 @@ export default (connection: MongoClient | undefined): Router => {
         data: {
           email: email.string()
         }
-      })
+      }).end()
     } else {
       try {
         userRepo.create(user)
@@ -155,11 +155,13 @@ export default (connection: MongoClient | undefined): Router => {
   })
 
   router.post('/token', async (req, res) => {
+
     try {
       let user = jwt.verify(
         req.body.token,
         String(process.env.REFRESH_TOKEN_SECRET)
       )
+      console.log(user);
 
       res.status(200).json({
         status: 'success',
@@ -177,6 +179,7 @@ export default (connection: MongoClient | undefined): Router => {
 
   router.get('/test', Middleware.authenticate, async (req, res) => {
     try {
+      console.log(res.locals.user);
 
       res.status(200).json({
         status: 'success',

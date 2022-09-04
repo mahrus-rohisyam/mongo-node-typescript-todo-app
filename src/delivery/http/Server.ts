@@ -10,8 +10,9 @@ export default class Server {
 
   public run(port: number): void {
     const app: Express = express()
-    
-    app.use(cors())
+    const corsOption: cors.CorsOptions = { optionsSuccessStatus: 200, origin: ['http://localhost:8000', 'http://localhost:3000', 'http://localhost:3001'] }
+
+    app.use(cors(corsOption))
     app.use(express.json())
     app.use((_, res, next) => {
       res.setHeader('Access-Control-Allow-Origin', String(process.env.ORIGINS));
